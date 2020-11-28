@@ -7,13 +7,17 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { LayoutModule } from '@angular/cdk/layout';
+import { RouterModule, Routes } from '@angular/router';
 
-
+const routes: Routes = [
+  { path: '', component: HomeComponent }
+];
 
 @NgModule({
   declarations: [HomeComponent],
   imports: [
     CommonModule,
+    RouterModule.forChild(routes),
     MatGridListModule,
     MatCardModule,
     MatMenuModule,
