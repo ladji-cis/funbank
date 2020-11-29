@@ -13,12 +13,11 @@ export class AccountService extends BaseHttpService<Account> {
   constructor(http: HttpClient) {
     super(http);
   }
+  getAccouns(): Observable<Account[]> {
+    return this.getMultiple(this.url);
+  }
 
   getAccount(id: number): Observable<Account> {
     return this.getOne(this.url + '/' + id);
-  }
-
-  getAccouns(): Observable<Account[]> {
-    return this.getMultiple(this.url);
   }
 }

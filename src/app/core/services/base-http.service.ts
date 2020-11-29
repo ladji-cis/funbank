@@ -9,13 +9,13 @@ export abstract class BaseHttpService<T extends Entity> {
     this.error = 'Some Error occured, Please contact support for that.';
   }
 
-  protected getOne(url: string): Observable<T> {
-    const response = this.http.get<T>(`./assets/${url}-ds.json`);
+  protected getMultiple(url: string): Observable<T[]> {
+    const response = this.http.get<T[]>(`./assets/${url}-ds.json`);
     return response;
   }
 
-  protected getMultiple(url: string): Observable<T[]> {
-    const response = this.http.get<T[]>(`./assets/${url}-ds.json`);
+  protected getOne(url: string): Observable<T> {
+    const response = this.http.get<T>(`./assets/${url}-ds.json`);
     return response;
   }
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { BaseComponent } from 'src/app/core/components/base-component';
 import { Account } from './models/account';
 import { AccountService } from './services/account.service';
@@ -8,7 +8,7 @@ import { AccountService } from './services/account.service';
   templateUrl: './account.component.html',
   styleUrls: ['./account.component.scss']
 })
-export class AccountComponent extends BaseComponent implements OnInit {
+export class AccountComponent extends BaseComponent implements OnInit, OnDestroy {
 
   accounts: Account[] = [];
 
@@ -16,11 +16,16 @@ export class AccountComponent extends BaseComponent implements OnInit {
     super();
   }
 
+
   ngOnInit(): void {
     this.subsriptions.push(this.accountService.getAccouns().subscribe(data => {
       this.accounts = data;
       console.log(data);
     }));
+  }
+
+  ngOnDestroy(): void {
+    this.onDestroy();
   }
 
 }

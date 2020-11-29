@@ -1,1 +1,7 @@
 <h1 class="mat-h1">Account</h1>
+
+<ng-container *ngIf="accounts">
+  <ng-container *ngFor="let account of accounts">
+    <p> {{account | json}} </p>
+  </ng-container>
+</ng-container>

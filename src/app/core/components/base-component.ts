@@ -1,7 +1,7 @@
-import { OnDestroy } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Subscription } from 'rxjs';
 
-export abstract class BaseComponent implements OnDestroy {
+export abstract class BaseComponent {
 
   protected subsriptions: Subscription[];
 
@@ -9,8 +9,10 @@ export abstract class BaseComponent implements OnDestroy {
     this.subsriptions = [];
   }
 
-  ngOnDestroy(): void {
-    this.subsriptions.forEach(sub => sub.unsubscribe());
-    console.log('unsubscribe');
+  protected onDestroy(): void {
+    this.subsriptions.forEach(sub => {
+      sub.unsubscribe();
+      console.log('unsubscribe: ' + JSON.stringify(sub));
+    });
   }
 }
