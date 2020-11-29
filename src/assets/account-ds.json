@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "FB-01",
+    "balance": 0,
+    "type": "STANDARD",
+    "userId": 1
+  },
+  {
+    "id": 1,
+    "name": "FB-02",
+    "balance": 25.50,
+    "type": "STANDARD",
+    "userId": 2
+  }
+]
