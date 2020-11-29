@@ -16,6 +16,9 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HomeModule } from './modules/home/home.module';
+import { NgxsModule } from '@ngxs/store';
+import { AppState } from './store/app.state';
+import { AccountState } from './modules/account/store/account.state';
 
 
 @NgModule({
@@ -35,7 +38,8 @@ import { HomeModule } from './modules/home/home.module';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    HomeModule
+    HomeModule,
+    NgxsModule.forRoot([AppState, AccountState])
   ],
   providers: [],
   bootstrap: [AppComponent]

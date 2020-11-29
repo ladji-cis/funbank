@@ -13,7 +13,7 @@ export class AccountService extends BaseHttpService<Account> {
   constructor(http: HttpClient) {
     super(http);
   }
-  getAccouns(): Observable<Account[]> {
+  getAccounts(): Observable<Account[]> {
     return this.getMultiple(this.url);
   }
 

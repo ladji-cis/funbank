@@ -4,10 +4,15 @@
 
 .sidenav {
   width: 200px;
+  background-color: #fafafa
 }
 
 .sidenav .mat-toolbar {
   background: inherit;
+  font-weight: 500;
+  font-size: 20px;
+  color: #AAA;
+  border-bottom: 1px solid #eee;
 }
 
 .mat-toolbar.mat-primary {
@@ -16,6 +21,9 @@
   z-index: 1;
 }
 
+mat-icon{
+  font-size: 30px;
+}
 .spacer {
   flex: 1 1 auto;
 }
@@ -27,4 +35,35 @@
 .router-outlet {
   padding: 20px;
   background-color: aliceblue;
+}
+
+.welcome{
+  font-size: 18px;
+  letter-spacing: .5px;
+  a{
+    text-decoration: none;
+    color: rgb(201, 174, 174);
+    &:hover{
+      text-decoration: underline #fff;
+    }
+    small{
+      color: #ccc;
+    }
+  }
+}
+
+h1.brand{
+  font-size: 30px;
+   
+  span{
+    color: purple;
+    margin-right: 5px;
+    padding: 0 5px;
+    border: 1px solid #eee;
+    background-color: #fff;
+    font-weight: 600;
+  }
+  b{
+    color: #eee;
+  }
 }
